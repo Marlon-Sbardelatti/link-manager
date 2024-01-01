@@ -24,8 +24,9 @@
                 <%=link.description%>
             </p>
             <div class="d-flex flex-column">
-                <a href="<%=link.url%>">Go to website</a>
+                <a href="/<%=link.url%>">Direct Link</a>
                 <a href="/edit/<%=link.id%>" class="mt-2">Edit</a>
+                <h4>Views(route): <%=link.views%></h4>
 
             </div>
             <button class="btn btn-danger text-light mt-2" type="" onclick="deleteLink('<%=link.id%>')">Delete</button>

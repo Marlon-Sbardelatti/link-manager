@@ -3,7 +3,8 @@ const Link = require('../models/Link.js');
 const redirect = async (req, res, next) => {
     const title = req.params.title;
     try {
-        const doc = await Link.findOne({ title })
+        const doc = await Link.findOneAndUpdate({ title }, { $inc: { views: 1 } })
+        console.log(doc.views)
         if (doc) {
             res.redirect(doc.url);
         } else {
